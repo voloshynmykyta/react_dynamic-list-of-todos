@@ -7,8 +7,6 @@ import { User } from '../../types/User';
 interface TodoModalProps {
   selectedTodo: Todo;
   onClose: () => void;
-  isLoading?: boolean;
-  onLoading?: () => void;
 }
 
 export const TodoModal: React.FC<TodoModalProps> = ({

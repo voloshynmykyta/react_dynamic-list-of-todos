@@ -51,7 +51,7 @@ export const App: React.FC = () => {
   const handleFilterSelect = (
     event: React.ChangeEvent<HTMLSelectElement>,
   ): void => {
-    setSelectedFilter(event.target.value);
+    setSelectedFilter(event.target.value as FilterStatus);
   };
 
   useEffect(() => {

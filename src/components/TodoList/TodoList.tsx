@@ -9,7 +9,7 @@ interface TodoListProps {
 }
 
 export const TodoList: React.FC<TodoListProps> = memo(
-  ({ todos, selectedTodo, onSelectTodo }: TodoListProps) => (
+  ({ todos, selectedTodo, onSelectTodo = () => {} }: TodoListProps) => (
     <table className="table is-narrow is-fullwidth">
       <thead>
         <tr>
@@ -50,7 +50,7 @@ export const TodoList: React.FC<TodoListProps> = memo(
                 data-cy="selectButton"
                 className="button"
                 type="button"
-                onClick={() => onSelectTodo(todo)}
+                onClick={() => onSelectTodo?.(todo)}
               >
                 <span className="icon">
                   {selectedTodo && selectedTodo.id === todo.id ? (
